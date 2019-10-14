@@ -77,6 +77,13 @@ public class StringUtil {
 	
 	
 	//方法1：判断源字符串是否有值，空引号(空白字符串)也算没值 (5分)
+	public static boolean isNumber(String src) {
+		if(!hasText(src))
+			return false;
+		String telRegex ="[0-9]*.[0-9]*";
+		return src.matches(telRegex);
+	}
+	//方法1：判断源字符串是否有值，空引号(空白字符串)也算没值 (5分)
 	public static boolean hasLength(String src) {
 		// TODO 实现代码
 		
@@ -167,5 +174,7 @@ public class StringUtil {
 		    String lastname =randomChineseString(RandomUtils.random(1, 2));
 			return firstname +lastname;
 	}
+	
+	
 
 }

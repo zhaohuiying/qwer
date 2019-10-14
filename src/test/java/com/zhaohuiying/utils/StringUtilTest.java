@@ -45,5 +45,13 @@ public class StringUtilTest {
 	}
 	
 	
+	/*
+	 * @Test public void testInsert() { String str = StreamUtil.readTextFile(new
+	 * File("e:/test.txt")); String[] split = str.split("\\|"); for (String string :
+	 * split) { departmentService.insert(new Department(string.trim())); }
+	 * 
+	 * }
+	 */
+	 
 
 }

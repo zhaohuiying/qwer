@@ -1,11 +1,15 @@
 package com.zhaohuiying.common;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StreamUtils {
 	/*
@@ -65,5 +69,39 @@ public class StreamUtils {
 		}
 		return null;
 	}
-
+	
+	
+	/**
+	 * 
+	 * @Title: readText 
+	 * @Description: 一行读取
+	 * @param src
+	 * @return
+	 * @return: List<String>
+	 */
+	
+	
+	public static List<String> readTextForLine(InputStream ins){
+		
+		List<String> list = new ArrayList<String>();
+		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(ins));
+		String lineStr=null;
+		try {
+			while((lineStr=reader.readLine())!=null) {
+				list.add(lineStr);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			//关流
+			closeAll(ins,reader);
+		}
+		return list;
+		
+		
+	}
 }
+
+
+
